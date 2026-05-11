@@ -1,29 +1,23 @@
-class Telefon:
-    def __init__(self, brand, model, narx):
-        self.brand = brand
-        self.model = model
-        self.narx = narx
+class Oyinchi:
+    def __init__(self, ism, level, coin):
+        self.ism = ism
+        self.level = level
+        self.coin = coin
 
-    def get_info(self):
-        return f"{self.brand} {self.model} telefoni narxi {self.narx}$"
+    def add_coin(self, miqdor):
+        self.coin += miqdor
+        print(f" {miqdor} coin qoshildi")
 
-
-class TelefonDokon(Telefon):
-    def __init__(self, brand, model, narx, dokon_nomi, manzil):
-        super().__init__(brand, model, narx)
-        self.dokon_nomi = dokon_nomi
-        self.manzil = manzil
-
-    def get_info(self):
-        return f"{super().get_info()} va {self.dokon_nomi} do'konida {self.manzil}da sotiladi"
+    def info(self):
+        print(f" {self.ism}")
+        print(f" Level: {self.level}")
+        print(f" Coin: {self.coin}")
 
 
-tel1 = TelefonDokon(
-    "Samsung",
-    "S24 Ultra",
-    1200,
-    "Mobile Market",
-    "Toshkent"
-)
+player = Oyinchi("Shoxrux", 5, 100)
 
-print(tel1.get_info())
+player.add_coin(50)
+player.add_coin(200)
+player.add_coin(500)
+
+player.info()
